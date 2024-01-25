@@ -33,3 +33,34 @@ export const getContacts = (req, res) => {
       res.json(data);
     });
 };
+
+export const getContact = (req, res) => {
+  Contact.findById(req.params.contactId)
+    .select("-__v") //exclude field from response
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};
+
+export const updateContact = (req, res) => {
+  Contact.findOneAndUpdate({ _id: req.params.contactId }, req.body, {
+    new: true,
+  })
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((err) => res.send(err));
+};
+
+export const deleteContact = (req, res) => {
+  Contact.deleteOne({ _id: req.params.contactId })
+    .then(() => {
+      res.json(`Contact ${req.params.contactId} is deleted successfully`);
+    })
+    .catch((err) => {
+      res.status(500).json({ error: err.message });
+    });
+};
