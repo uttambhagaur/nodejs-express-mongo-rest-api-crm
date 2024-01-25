@@ -25,6 +25,7 @@ export const addNewContact = (req, res) => {
 
 export const getContacts = (req, res) => {
   Contact.find({})
+    .select("firstName lastName company phone")
     .catch((err) => {
       res.send(err);
     })
