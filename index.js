@@ -1,14 +1,13 @@
 import express, { request, response } from "express";
 import routes from "./src/routes/crmRoutes";
-import mongoose from "mongoose";
 import bodyParser from "body-parser";
+import dbConfig from "./config/db.config";
+import serverConfig from "./config/server.config";
 
 const app = express();
-const PORT = 3000;
 
 // mongoose connection
-mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:37017/CRMdb", { useNewurlParser: true });
+dbConfig.connect();
 
 //body-parser
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -17,9 +16,11 @@ app.use(bodyParser.json());
 routes(app);
 
 app.get("/", (request, response) => {
-  response.send(`Node js application running on http://localhost:${PORT}`);
+  response.send(
+    `Node js application running on http://localhost:${serverConfig.port}`
+  );
 });
 
-app.listen(PORT, () => {
-  console.log(`Application running at http://localhost:${PORT}`);
+app.listen(serverConfig.port, () => {
+  console.log(`Application running at http://localhost:${serverConfig.port}`);
 });
