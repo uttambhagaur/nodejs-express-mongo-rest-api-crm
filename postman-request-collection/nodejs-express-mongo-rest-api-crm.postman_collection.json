@@ -30,6 +30,31 @@
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "firstName",
+							"value": "Uttam",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Singh",
+							"type": "text"
+						},
+						{
+							"key": "company",
+							"value": "Linkedin",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "665728736",
+							"type": "text"
+						}
+					]
+				},
 				"url": {
 					"raw": "http://localhost:3000/contact",
 					"protocol": "http",
@@ -49,8 +74,35 @@
 			"request": {
 				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "_id",
+							"value": "65b278e3152230f6dd5e01b8",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "firstName",
+							"value": "Uttam",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "lastName",
+							"value": "Bhagaur",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "uttam.bhagaur@gmail.com",
+							"type": "text"
+						}
+					]
+				},
 				"url": {
-					"raw": "http://localhost:3000/contact/121",
+					"raw": "http://localhost:3000/contact/65b278e3152230f6dd5e01b8",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -58,7 +110,7 @@
 					"port": "3000",
 					"path": [
 						"contact",
-						"121"
+						"65b278e3152230f6dd5e01b8"
 					]
 				}
 			},
@@ -70,7 +122,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/contact/121",
+					"raw": "http://localhost:3000/contact/65b278e3152230f6dd5e01b8",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -78,7 +130,27 @@
 					"port": "3000",
 					"path": [
 						"contact",
-						"121"
+						"65b278e3152230f6dd5e01b8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "contact/contactId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/contact/65b278e3152230f6dd5e01b8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contact",
+						"65b278e3152230f6dd5e01b8"
 					]
 				}
 			},
