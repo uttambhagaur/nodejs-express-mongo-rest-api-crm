@@ -22,3 +22,13 @@ export const addNewContact = (req, res) => {
   //     res.json(contact);
   //   });
 };
+
+export const getContacts = (req, res) => {
+  Contact.find({})
+    .catch((err) => {
+      res.send(err);
+    })
+    .then((data) => {
+      res.json(data);
+    });
+};
