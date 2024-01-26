@@ -18,12 +18,12 @@ This project demonstrates how to create a RESTful API using Node.js, Express, an
 3. You can now access the API endpoints.
 
 ## API Endpoints
-GET /api/resource: Retrieve all resources.
-GET /api/resource/:id: Retrieve a specific resource by ID.
-POST /api/resource: Create a new resource.
-PUT /api/resource/:id: Update a specific resource by ID.
-DELETE /api/resource/:id: Delete a specific resource by ID.
+1. GET /contact: Retrieve all contacts.
+2. GET /contact/:contactId: Retrieve a specific contact by ID.
+3. POST /contact: Create a new contact.
+4. PUT /contact/:contactId: Update a specific contact by ID.
+5. DELETE /contact/:contactId: Delete a specific contact by ID.
 
 ## Configuration
-You can configure the MongoDB connection in config/db.config.js.
-You can adjust other server configurations in config/server.config.js.
+1. You can configure the MongoDB connection in config/db.config.js.
+2. You can adjust other server configurations in config/server.config.js.
